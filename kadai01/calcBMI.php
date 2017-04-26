@@ -20,15 +20,15 @@ $idial_weight = $utils->calc_idial_weight($height);
  *  @param { double } $bmi
  *  @return { string } $msg
  */
-function get_body_type($bmi,$idial_weight){
-  $bmi = round($bmi);
+function get_body_type($org_bmi,$idial_weight){
+  $bmi = round($org_bmi);
 
   $good = "ちょうどいいです。現状を維持しましょう。";
   $fat = "肥満です。体重" . $idial_weight . "kgを目指しましょう。";
   $thin = "やせています。体重" . $idial_weight . "kgを目指しましょう。";
 
   $msg = $bmi == 22 ? $good : $bmi < 22 ? $thin : $fat;
-
+  
   return $msg;
 }
 
